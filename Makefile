@@ -15,18 +15,13 @@ OBJS   := $(OBJ_C) $(OBJ_AS)
 DEPS   := $(OBJS:.o=.d)
 
 QEMU       ?= qemu-system-riscv64
-QEMU_FLAGS ?= -machine virt -nographic -bios build/opensbi/platform/generic/firmware/fw_jump.bin -smp 1 -m 128M -serial mon:stdio
+QEMU_FLAGS ?= -machine virt -nographic -bios firmware/fw_jump.bin -smp 1 -m 128M -serial mon:stdio
 
 .PHONY: all clean run
 
-all: opensbi build/$(TARGET)
+all: build/$(TARGET)
 
 -include $(DEPS)
-
-opensbi: build
-	@echo "Building OpenSBI..."
-	cd opensbi && make PLATFORM=generic ARCH=riscv64 CROSS_COMPILE=riscv64-unknown-linux-gnu- O=../build/opensbi $(MAKECMDGOALS)
-	@echo "OpenSBI built successfully."
 
 build/$(TARGET): $(OBJS) | build
 	$(LD) $(LDFLAGS) -o $@ $^
