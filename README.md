@@ -1,6 +1,6 @@
 # OS Writing RTA
 
-## Setup
+## Pre-requisites
 
 1. Install [QEMU](https://www.qemu.org/download/).
   - For Linux:
@@ -56,7 +56,23 @@
   - Build and Install the Toolchain
     ```bash
     cd riscv-gnu-toolchain
-    ./configure --prefix=/opt/riscv --enable-qemu-system
+    ./configure --prefix=/opt/riscv --enable-multilib --enable-qemu-system
     make
+    make linux
     ```
 
+## Setup
+
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/cosocaf/os-rta-template.git
+  ```
+2. Change to the project directory:
+  ```bash
+  cd os-rta-template
+  ```
+3. Test build and run:
+  ```bash
+  make
+  make run
+  ```
