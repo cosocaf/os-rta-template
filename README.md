@@ -6,7 +6,7 @@
   - For Linux:
     - Arch:
       ```bash
-        pacman -S qemu
+      pacman -S qemu
       ```
     - Debian/Ubuntu:
       ```bash
