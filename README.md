@@ -129,9 +129,6 @@ We strongly recommend installing it well in advance of the RTA.
 
 If pre-built packages are not available for your operating system, you can build the toolchain from source.
 
-<details>
-<summary>Click here for instructions on building from source</summary>
-**Note**: This process is time-consuming (often over an hour) and should be completed before starting the RTA.
 1. Install Dependencies
     You will need to install the necessary build tools and libraries. The required packages vary by distribution.
     - **Debian/Ubuntu**:
@@ -159,7 +156,6 @@ If pre-built packages are not available for your operating system, you can build
     export PATH=/opt/riscv/bin:$PATH
     ```
     Then, run `source ~/.bashrc` or `source ~/.zshrc` to apply the changes.
-</details>
 
 ### Verify your installation
 
