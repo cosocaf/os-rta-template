@@ -31,7 +31,7 @@
     2. Install a Linux distribution (e.g., Ubuntu) from the Microsoft Store.
     3. Open the WSL terminal and follow the Linux instructions above.
 2. Install [RISC-V GNU Compiler Toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain).
-  1. Install dependencies:
+  - Install dependencies:
     - For Linux:
       - Arch:
         ```bash
@@ -49,11 +49,11 @@
       ```bash
       brew install python3 gawk gnu-sed make gmp mpfr libmpc isl zlib expat texinfo flock libslirp
       ```
-  2. Clone the repository:
+  - Clone the repository:
     ```bash
     git clone https://github.com/riscv/riscv-gnu-toolchain
     ```
-  3. Build and Install the Toolchain
+  - Build and Install the Toolchain
     ```bash
     cd riscv-gnu-toolchain
     ./configure --prefix=/opt/riscv --enable-qemu-system
