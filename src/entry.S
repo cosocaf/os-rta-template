@@ -14,7 +14,7 @@ _hlt:
 .globl kernel_stack_top
 
 .balign 4096
-kenrel_stack:
+kernel_stack:
     .space 4096
 kernel_stack_top:
 
