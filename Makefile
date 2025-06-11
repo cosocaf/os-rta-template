@@ -3,7 +3,7 @@ CC     = riscv64-unknown-elf-gcc
 AS     = riscv64-unknown-elf-as
 LD     = riscv64-unknown-elf-ld
 
-CFLAGS  = -Wall -Wextra -std=c11 -ffreestanding -nostdlib -O2 -mcmodel=medany -Iinclude
+CFLAGS  = -Wall -Wextra -std=c11 -ffreestanding -nostdlib -O0 -ggdb -mcmodel=medany -Iinclude
 LDFLAGS = -T linker.ld -nostdlib --gc-sections
 
 C_SRC  := $(wildcard src/*.c)
@@ -49,4 +49,6 @@ debug: build/$(TARGET)
 	@echo "riscv64-unknown-elf-gdb build/$(TARGET)"
 	@echo "Then use 'target remote :1234' to connect to QEMU."
 	$(QEMU) $(QEMU_FLAGS) -kernel build/$(TARGET) -s -S
+
+include user.mk
 
